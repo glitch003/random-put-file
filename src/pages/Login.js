@@ -3,7 +3,7 @@ import { putioAPI } from "../utils";
 import Button from "@mui/material/Button";
 
 const loginUrl = putioAPI.Auth.GetLoginURL({
-  redirectURI: "http://localhost:3002/oauth/callback",
+  redirectURI: "https://random-put-file.vercel.app/oauth/callback",
   responseType: "token",
   state: "",
   clientName: "Random File",
