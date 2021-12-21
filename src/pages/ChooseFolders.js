@@ -7,6 +7,7 @@ import ListItemText from "@mui/material/ListItemText";
 import Checkbox from "@mui/material/Checkbox";
 import FolderIcon from "@mui/icons-material/Folder";
 import InsertDriveFileIcon from "@mui/icons-material/InsertDriveFile";
+import Button from "@mui/material/Button";
 
 import { useNavigate, useParams } from "react-router-dom";
 
@@ -97,7 +98,7 @@ export default function ChooseFolders() {
   return (
     <div className="App">
       <div style={{ maxWidth: 800, margin: "auto" }}>
-        <List>
+        <List dense>
           {items ? (
             items.map((item) => (
               <ListItem
@@ -133,15 +134,12 @@ export default function ChooseFolders() {
         </List>
         <div style={{ height: 36 }} />
         <h3>{selectedItems.size} items selected</h3>
-        <button onClick={handlePlay} style={{ fontSize: 36 }}>
+        <Button variant="contained" onClick={handlePlay}>
           Play
-        </button>{" "}
-        <button
-          onClick={() => setSelectedItems(new Set())}
-          style={{ fontSize: 36 }}
-        >
+        </Button>{" "}
+        <Button variant="outlined" onClick={() => setSelectedItems(new Set())}>
           Reset
-        </button>
+        </Button>
       </div>
       <div style={{ height: 42 }} />
     </div>

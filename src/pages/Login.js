@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { putioAPI } from "../utils";
+import Button from "@mui/material/Button";
 
 const loginUrl = putioAPI.Auth.GetLoginURL({
   redirectURI: "http://localhost:3002/oauth/callback",
@@ -16,7 +17,9 @@ export default function Login() {
   return (
     <div className="App">
       <header className="App-header">
-        <button onClick={login}>Login to Put.io</button>
+        <Button variant="contained" onClick={login}>
+          Login to Put.io
+        </Button>
       </header>
     </div>
   );
